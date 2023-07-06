@@ -1,0 +1,19 @@
+<!-- <div *ngIf="data | async as cards">
+    <ng-container >
+        <ul>
+            <li *ngFor="let item of cards">{{item.name}}</li>
+        </ul>
+    </ng-container>
+</div> -->
+
+<button (click)="goBack()">Torna indietro</button>
+
+<div>
+  <h1>LISTING</h1>
+  <input [(ngModel)]="searchTerm" placeholder="Search..." (input)="filterData()">
+    <ng-container *ngFor="let item of filteredData">
+      <app-card [card]="item">
+        <app-details></app-details>
+      </app-card>
+    </ng-container>
+</div>
